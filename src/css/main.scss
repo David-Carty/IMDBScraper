@@ -1,0 +1,185 @@
+$main-color: #4eb6ac;
+
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  -o-user-select: none;
+  user-select: none;
+}
+
+#loadingOverlay{z-index: 10; 
+  position: absolute; 
+  display:none;
+  top:0px; 
+  bottom:0px; 
+  width: 100%;
+  background:rgba(255,255,255,0.5);
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+outline: none;
+}
+
+//Demo
+body {
+  height: 100%;
+  width: 100%;
+  background: #eeeeee;
+  font-family: "PT Sans", sans-serif;
+}
+
+.demo {
+  width: 100%;
+  height: 100%;
+}
+
+.mainCard {
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+  background-color: white;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width:900px;
+  height:715px;
+  animation: {
+    name: mainCard;
+    duration: 1s;
+    delay: 0s;
+    fill-mode: both;
+  };
+}
+
+@keyframes mainCard {
+  0% {
+    transform: scale(0);
+  }
+}
+
+.mainCardHeader {
+  background-color: #000;
+  height: 115px;
+  width: 100%;
+  animation: {
+    name: mainCardHeader;
+    duration: 0.4s;
+    delay: 0.5s;
+    fill-mode: both;
+  };
+}
+
+@keyframes mainCardHeader {
+  0% {
+    transform: scaleY(0);
+  }
+}
+
+.mainCardContent {
+  
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 100px;
+  height: 480px;
+  width: 90%;
+  background:#ccc;
+}
+
+
+.mainCardHeader{
+
+  .card{
+    cursor:pointer;
+    background:white;
+    width:8em;
+    padding: 8px 0 5px;
+      margin:5px;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 1px 10px rgba(0,0,0,0.22);
+  }
+  .filmDirectors img{
+    width:7em;
+  }
+}
+
+/* Responsive Table */
+
+/* -- Box model ------------------------------- */
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* -- Demo style ------------------------------- */
+html, body {
+  position: relative;
+  min-height: 100%;
+  height: 100%;
+}
+
+
+
+body {
+  // font-family: 'Helvetica Neue, Helvetica, Arial', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  // font-size: 1.4rem;
+  // line-height: 2rem;
+  // letter-spacing: 0.01rem;
+  color: #212121;
+  background-color: #f5f5f5;
+
+  // Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#demo {
+  margin: 20px auto;
+  max-width: 960px;
+}
+
+
+/* -- Material Design Table style -------------- */
+
+// Variables
+// ---------------------
+$table-header-font-weight:      400;
+$table-header-font-color:       #757575;
+
+$table-cell-padding:            1rem;
+$table-condensed-cell-padding:  $table-cell-padding/2;
+
+
+$table-bg:                      #fff;
+$table-bg-accent:               #f5f5f5;
+$table-bg-hover:                rgba(0,0,0,.05);
+$table-bg-active:               $table-bg-hover;
+$table-border-color:            #e0e0e0;
+$table-bg-inverse:              #1A3D96;
+
+$bp-1:                          600px;
+
+// Mixins
+// -----------------
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+@mixin mobile-table-head() {
+  background-color: #E4F2FA;
+  text-align: left;
+  font-weight: 500;
+  border: none;
+}
+

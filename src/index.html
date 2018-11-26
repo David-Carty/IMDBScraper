@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>IMDB Directors Filomography Scraper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/tiny-slider.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    <div id="loadingOverlay"></div>
+    <div class="demo">
+
+        <div class="mainCard">
+            <div class="mainCardHeader">
+
+                <div class="filmDirectors">
+                    <div>
+                        <div class="card"><img data-idx="0" src="assets/img/Godard.jpg"
+                                alt="Jean-Luc Godard"></div>
+                    </div>
+                    <div>
+                        <div class="card"><img data-idx="1" src="assets/img/Coen.jpg" alt="Joel Coen"></div>
+                    </div>
+                    <div>
+                        <div class="card"><img data-idx="2" src="assets/img/leigh.jpg" alt="Mike Leigh"></div>
+                    </div>
+                    <div>
+                        <div class="card"><img data-idx="3" src="assets/img/Jarmusch.jpg"
+                                alt="Jim Jarmusch"></div>
+                    </div>
+                    <div>
+                        <div class="card"><img data-idx="4" src="assets/img/Loach.jpg" alt="Ken Loach"></div>
+                    </div>
+                    <div>
+                        <div class="card"><img data-idx="5" src="assets/img/lynch.jpg" alt="David Lynch"></div>
+                    </div>
+                    <div>
+                        <div class="card"><img data-idx="6" src="assets/img/Kubrick.jpg"
+                                alt="Stanley Kubrick"></div>
+                    </div>
+                    <div>
+                        <div class="card"><img data-idx="7" src="assets/img/Ostlund.jpg"
+                                alt="uben Östlund"></div>
+                    </div>
+                    <div>
+                        <div class="card"><img data-idx="8" src="assets/img/Vinterberg.jpg"
+                                alt="homas Vinterberg"></div>
+                    </div>
+                    <div>
+                        <div class="card"><img data-idx="9" src="assets/img/Kieslowski.jpg"
+                                alt="DKrzysztof Kieslowski"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainCardContent">
+                <div id="directorLink" class="table-head">Director: </div>
+                <div class="table-holder">
+                    <div class="table-responsive-vertical">
+                        <!-- Standard Tables -->
+
+                        <!-- Standard+ Table -->
+                        <table class="table table--standard table-hover">
+
+                            <thead>
+                                <tr>
+                                    <th>Movie</th>
+                                    <th>Year</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="movies">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.8/min/tiny-slider.js"></script>
+    <script src="bundle.js"></script>
+</body>
+
+</html>

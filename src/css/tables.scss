@@ -1,0 +1,201 @@
+// Tables
+//
+// -----------------
+
+$table-header-font-weight:      400;
+$table-header-font-color:       #757575;
+
+$table-cell-padding:            1rem;
+$table-condensed-cell-padding:  $table-cell-padding/2;
+
+
+$table-bg:                      #fff;
+$table-bg-accent:               #f5f5f5;
+$table-bg-hover:                rgba(0,0,0,.05);
+$table-bg-active:               $table-bg-hover;
+$table-border-color:            #e0e0e0;
+$table-bg-inverse:              #1A3D96;
+
+$bp-1:                          600px;
+
+// Mixins
+// -----------------
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+@mixin mobile-table-head() {
+  background-color: #E4F2FA;
+  text-align: left;
+  font-weight: 500;
+  border: none;
+}
+
+.table-head{
+  color:white;
+  background:black;
+  line-height:35px;
+
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+    &:active {
+      color: white;
+    }
+  }
+}
+
+.table-holder{
+  float:left;
+  height:444px;
+  width:100%;
+  background:white;
+  overflow-y:scroll;
+}
+
+// Baseline styles
+.table {
+  
+
+  width: 100%;
+  max-width: 100%;
+  // margin-bottom: 5rem;
+  background-color: $table-bg;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      @include transition(all .3s ease);
+      > th,
+      > td {
+        text-align: left;
+        padding: $table-cell-padding;
+        vertical-align: top;
+        border-top: 0;
+        @include transition(all .3s ease);
+      }
+    }
+  }
+  > thead > tr > th {
+    font-weight: $table-header-font-weight;
+    color: $table-header-font-color;
+    vertical-align: bottom;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+  }
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  > tbody + tbody {
+    border-top: 1px solid rgba(0,0,0,.12);
+  }
+
+  // Nesting
+  .table {
+    background-color: $table-bg;
+  }
+
+  // Remove border
+  .no-border {
+    border: 0;
+  }
+}
+
+
+@media screen and (max-width: $bp-1) {
+
+  // Tighten up spacing
+  .table--standard {
+    margin-bottom: 0;
+    background-color: transparent;
+    > thead,
+    > tfoot {
+      display: none;
+    }
+
+    > tbody {
+      display: block;
+
+      > tr {
+        display: block;
+        border: 1px solid $table-border-color;
+        margin-bottom: $table-cell-padding;
+
+        > td {
+          background-color: $table-bg;
+          display: block;
+          // vertical-align: middle;
+          text-align: right;
+        }
+        > td[data-title]:before {
+          content: attr(data-title);
+          float: left;
+          font-size: inherit;
+          font-weight: $table-header-font-weight;
+          color: $table-header-font-color;
+        }
+      }
+    }
+    
+    // New Styles
+    &.table--standard {
+      td {
+        &:first-child {
+          @include mobile-table-head;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    
+  }
+  
+
+  // Special overrides for hover tables
+  > .table-hover {
+    > tbody {
+      > tr:hover > td,
+      > tr:hover {
+        background-color: $table-bg;
+      }
+      > tr > td:hover {
+        background-color: $table-bg-hover;
+      }
+    }
+  }
+}
+
+// Hover effect
+//
+.table-hover {
+  > tbody > tr:hover {
+    > td,
+    > th {
+      background-color: $table-bg-hover;
+    }
+  }
+}
+
+.tns-controls [aria-controls] {
+  font-size: 15px;
+  margin: 0 5px;
+  padding: 0 1em;
+  height: 2.5em;
+  color: white;
+  background: #000;
+  border-radius: 3px;
+  border: 0;
+}
